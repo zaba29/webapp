@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Panel administratora{% endblock %}
+
+{% block content %}
+<h1>Panel administratora</h1>
+<p>Bieżący login: <strong>{{ credentials.login }}</strong></p>
+<form method="post">
+  <div>
+    <label for="new_login">Nowy login</label>
+    <input type="text" id="new_login" name="new_login" value="{{ credentials.login }}" required />
+  </div>
+  <div>
+    <label for="new_password">Nowe hasło</label>
+    <input type="password" id="new_password" name="new_password" required />
+  </div>
+  <div>
+    <label for="confirm_password">Powtórz nowe hasło</label>
+    <input type="password" id="confirm_password" name="confirm_password" required />
+  </div>
+  <button type="submit">Zapisz zmiany</button>
+</form>
+{% endblock %}
